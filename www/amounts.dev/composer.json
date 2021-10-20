@@ -1,0 +1,7 @@
+{
+    "name": "home/homework",
+    "type": "project",
+    "require": {
+        "twig/twig": "^3.0"
+    }
+}

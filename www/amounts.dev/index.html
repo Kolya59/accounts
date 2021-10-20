@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amounts</title>
+</head>
+<body>
+  <h1>Transfer</h1>
+  <form action="index.php" method="post">
+    Transfer $<input type="text" name="amount"/>from
+    <select name="from">
+      {% for account in accounts %}
+      {% set selected = '' %}
+      <option value="{{account.id}}" {{ selected }}>{{account.name}}</option>
+      {% endfor %}
+    </select>
+    to
+    <select name="to">
+      {% for account in accounts %}
+      {% set selected = '' %}
+      <option value="{{account.id}}" {{ selected }}>{{account.name}}</option>
+      {% endfor %}
+    </select>
+    <input type="submit" name="transfer"/>
+  </form>
+  <h1>Balances</h1>
+  <table>
+    {% for account in accounts %}
+    <tr>
+      <th>{{account.name}}</th>
+      <th>{{account.amount}}</th>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
